@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzas Pro: Libertad Financiera</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-300">
+
+    <div class="flex max-w-7xl mx-auto">
+        
+        <!-- SIDEBAR (Desktop) -->
+        <aside id="sidebar" class="hidden lg:flex flex-col w-64 h-screen sticky top-0 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 p-6 shadow-xl z-20">
+            <div class="flex items-center gap-2 mb-10 text-indigo-600 dark:text-indigo-400">
+                <i data-lucide="activity" class="w-7 h-7"></i>
+                <span class="text-xl font-bold tracking-tight">FinanzasPro</span>
+            </div>
+
+            <nav id="nav-container" class="flex-1 space-y-2">
+                <!-- Navigation items injected by JS -->
+            </nav>
+
+            <div class="pt-6 border-t border-slate-200 dark:border-slate-700">
+                <div class="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+                    <div class="bg-indigo-100 dark:bg-indigo-900 p-2 rounded-full">
+                        <i data-lucide="user" class="w-4 h-4 text-indigo-600 dark:text-indigo-300"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-medium text-slate-700 dark:text-slate-200">Usuario ID:</p>
+                        <p id="user-id-display" class="text-xs truncate">Cargando...</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main id="main-content" class="flex-1 p-4 lg:p-8 overflow-y-auto pb-24 scrollbar-custom">
+            <!-- Content will be injected here by JavaScript -->
+            <div id="loader" class="flex items-center justify-center h-screen">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- MOBILE BOTTOM NAV -->
+    <nav id="mobile-nav" class="lg:hidden fixed bottom-0 left-0 w-full bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 flex justify-around p-3 z-30 safe-area-bottom shadow-2xl">
+         <!-- Mobile navigation buttons injected by JS -->
+    </nav>
+    
+    <!-- CHATBOT FAB BUTTON -->
+    <button id="chatbot-fab" class="fixed bottom-4 right-4 z-40 bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-full transition-all transform hover:scale-105 flex items-center gap-2">
+      <i data-lucide="message-square" class="w-6 h-6"></i>
+      <span class="font-semibold hidden md:inline">Asistente</span>
+    </button>
+    
+    <!-- CHATBOT MODAL -->
+    <div id="chatbot-modal" class="fixed bottom-4 right-4 z-50 hidden">
+        <!-- Chatbot content injected by JS -->
+    </div>
+
+
+    <!-- MODAL PARA AGREGAR TRANSACCIÓN (Global) -->
+    <div id="add-transaction-modal" class="hidden fixed inset-0 bg-black/50 z-50 items-center justify-center p-4">
+      <div id="modal-content" class="bg-white dark:bg-slate-800 rounded-xl shadow-2xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200">
+        <!-- Modal content injected by JS -->
+      </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <link rel="stylesheet" href="./script.js">
+</body>
+</html>
